@@ -1,0 +1,4 @@
+tf_test_env/*
+
+*.ipynb
+static/*
