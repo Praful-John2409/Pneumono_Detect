@@ -1,4 +1,4 @@
-tf_test_env/*
-
-*.ipynb
-static/*
+*.pyc
+__pycache__/
+*.keras
+.env
