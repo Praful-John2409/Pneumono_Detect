@@ -1,3 +1,14 @@
+---
+title: Pneumonia Detection System
+emoji: 🩺
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "3.1.4"
+app_file: app.py
+pinned: false
+---
+
 # Pneumonia Detection System
 
 A Flask-based web application that uses a fine-tuned VGG19 model to detect pneumonia from chest X-ray images.
