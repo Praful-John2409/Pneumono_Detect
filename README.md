@@ -4,7 +4,6 @@ A Flask-based web application that uses a fine-tuned VGG19 model to detect pneum
 
 ## Model Links
 - [CNN Model](https://drive.google.com/file/d/1-4L-8HJ79W5k-0l8FchG4HH1SI2dLi2W/view?usp=sharing)
-<!-- - [Dataset](https://drive.google.com/drive/folders/1BhxsscDaVBamuyUv1HoyXsixeGvTWHt5?usp=sharing) -->
 
 ## Setup Instructions
 
@@ -90,25 +89,4 @@ Pneumono_Detect/
 - TensorFlow 2.12.0
 - Pillow 10.2.0
 - NumPy 1.23.5
-
-## License
-[Your chosen license]
-
-## Acknowledgments
-- Dataset source: [Add source]
-- Base VGG19 model: [Reference]
 ```
-
-This README provides:
-1. Clear setup instructions for both Windows and Linux/Mac
-2. Project structure overview
-3. Usage instructions
-4. Model information
-5. Dependencies list
-6. Placeholders for license and acknowledgments
-
-Remember to:
-1. Replace `yourusername` with your actual GitHub username
-2. Add appropriate license information
-3. Fill in the acknowledgments section
-4. Update any specific details about your implementation
