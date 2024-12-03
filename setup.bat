@@ -11,6 +11,9 @@ python -m pip install --upgrade pip
 echo Installing requirements...
 pip install -r requirements.txt
 
+echo Upgrading TensorFlow and Keras...
+pip install --upgrade tensorflow keras
+
 echo Setup complete! To activate the environment, run:
 echo tf_test_env\Scripts\activate
-pause 
+pause
