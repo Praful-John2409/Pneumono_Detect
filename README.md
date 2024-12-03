@@ -25,7 +25,7 @@ cd Pneumono_Detect
 #### Windows:
 
 ```bash
-setup.bat
+./setup.bat
 ```
 
 #### Linux/Mac:
