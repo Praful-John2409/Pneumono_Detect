@@ -89,4 +89,3 @@ Pneumono_Detect/
 - TensorFlow 2.12.0
 - Pillow 10.2.0
 - NumPy 1.23.5
-```
