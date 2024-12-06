@@ -13,13 +13,6 @@ CONFIDENCE_THRESHOLD = 0.7
 
 
 def preprocess_image(image):
-    """
-    Preprocesses the input image for the model.
-    Args:
-        image (PIL.Image): Input image.
-    Returns:
-        numpy.ndarray: Preprocessed image ready for prediction.
-    """
     img = image.convert("RGB")  # Ensure the image is RGB
     img = img.resize((128, 128))  # Resize to model's input size
     img_array = np.array(img) / 255.0  # Normalize pixel values to [0, 1]
@@ -28,19 +21,10 @@ def preprocess_image(image):
 
 
 def predict_image(image):
-    """
-    Predicts the class of the input image with confidence-based filtering.
-    Args:
-        image (PIL.Image): Input image.
-    Returns:
-        str: Predicted class label or uncertainty message.
-        float: Confidence score (if applicable).
-    """
     img_array = preprocess_image(image)
     prediction = model.predict(img_array)
     confidence = np.max(prediction)
 
-    # Apply confidence threshold
     if confidence < CONFIDENCE_THRESHOLD:
         return "Uncertain: Low confidence", confidence
 
@@ -48,15 +32,39 @@ def predict_image(image):
     return predicted_class, confidence
 
 
-# Create a Gradio interface
-interface = gr.Interface(
-    fn=predict_image,
-    inputs=gr.Image(type="pil"),
-    outputs=[gr.Textbox(label="Predicted Class"), gr.Textbox(label="Confidence")],
-    title="Pneumonia Detection CNN",
-    description="Upload an image to classify it as NORMAL or PNEUMONIA.",
-)
+def acknowledge(agree):
+    if agree:
+        return (
+            gr.update(visible=True),
+            "Thank you for acknowledging the disclaimer. You may now use the app.",
+        )
+    else:
+        return gr.update(visible=False), "You must accept the disclaimer to proceed."
 
-# Launch the interface
+
+# Create a Gradio interface using Blocks
+with gr.Blocks() as app:
+    gr.Markdown(
+        "**Disclaimer:** This application is a student project developed as part of coursework and is intended solely for educational and experimental purposes. It is not a substitute for professional medical advice, diagnosis, or treatment. The results provided by this application should not be relied upon for medical decision-making. Use at your own discretion."
+    )
+
+    agree = gr.Checkbox(
+        label="I acknowledge that this application is for experimental use only and not suitable for medical purposes."
+    )
+    message = gr.Textbox(interactive=False)
+
+    with gr.Row(visible=False) as interface_row:
+        image_input = gr.Image(type="pil")
+        submit_button = gr.Button("Submit")
+        predicted_class = gr.Textbox(label="Predicted Class")
+        confidence = gr.Textbox(label="Confidence")
+
+        submit_button.click(
+            fn=predict_image, inputs=image_input, outputs=[predicted_class, confidence]
+        )
+
+    agree.change(acknowledge, agree, [interface_row, message])
+
+# Launch the app
 if __name__ == "__main__":
-    interface.launch(server_name="0.0.0.0", server_port=7860)
+    app.launch()
