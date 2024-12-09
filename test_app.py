@@ -1,3 +1,6 @@
+# Work Distribution:
+# Function mock_model, test_preprocess_iamge, test_predict_image written by Tingfei Gu
+# Function test_acknowledge, test_gradio_interface, test_end_to_end written by Ranyi Zhang
 import pytest
 import numpy as np
 from unittest.mock import MagicMock
