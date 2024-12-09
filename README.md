@@ -79,7 +79,7 @@ python app.py
 
 ## Model Information
 - Architecture: VGG19 (fine-tuned)
-- Input Size: 128x128x3
+- Input Size: 512x512x3
 - Classes: NORMAL, PNEUMONIA
 - Confidence Threshold: 0.7
 
