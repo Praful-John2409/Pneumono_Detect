@@ -17,7 +17,7 @@ CONFIDENCE_THRESHOLD = 0.7
 
 def preprocess_image(image):
     img = image.convert("RGB")  # Ensure the image is RGB
-    img = img.resize((128, 128))  # Resize to model's input size
+    img = img.resize((512, 512))  # Resize to model's input size
     img_array = np.array(img) / 255.0  # Normalize pixel values to [0, 1]
     img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
     return img_array
