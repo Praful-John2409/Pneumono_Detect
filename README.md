@@ -75,19 +75,7 @@ python app.py
 2. Click "Predict" to get the classification result
 3. View the prediction result and confidence score
 
-## Project Structure
-```
-Pneumono_Detect/
-├── app.py                  # Flask application
-├── requirements.txt        # Python dependencies
-├── setup.bat              # Windows setup script
-├── setup.sh               # Linux/Mac setup script
-├── static/
-│   └── uploads/           # Folder for uploaded images
-└── templates/
-    ├── index.html         # Upload page
-    └── result.html        # Results page
-```
+
 
 ## Model Information
 - Architecture: VGG19 (fine-tuned)
