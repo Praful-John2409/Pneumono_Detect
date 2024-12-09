@@ -1,90 +1,111 @@
----
-title: Pneumonia Detection System
-emoji: 🩺
-colorFrom: blue
-colorTo: green
-sdk: gradio
-sdk_version: "3.1.4"
-app_file: app.py
-pinned: false
+# Pneumono Detect: Pneumonia Detection System
+
+Welcome to the Pneumono Detect repository, a deep learning-based application for detecting pneumonia from chest X-ray images using a fine-tuned VGG19 model. This repository contains the code, setup scripts, and resources to run the project locally.
+
 ---
 
-# Pneumonia Detection System
+## **Repository Contents**
 
-A Flask-based web application that uses a fine-tuned VGG19 model to detect pneumonia from chest X-ray images.
+| File/Folder                     | Description                                                                 |
+|----------------------------------|-----------------------------------------------------------------------------|
+| `.gitattributes`                | Configures file attributes for the Git repository.                          |
+| `.gitignore`                    | Specifies files and folders to be ignored by Git.                          |
+| `272 Project PPT.pdf`           | Presentation file summarizing the project.                                 |
+| `CNNforPneumoniaDetection.ipynb`| Jupyter Notebook with the model training code for pneumonia detection.      |
+| `README.md`                     | This README file containing project details.                               |
+| `app.py`                        | The main application script for running the Gradio-based interface.        |
+| `requirements.txt`              | A list of Python dependencies required to run the application.             |
+| `setup.bat`                     | Windows setup script to install dependencies and configure the environment.|
+| `setup.sh`                      | Linux/Mac setup script to install dependencies and configure the environment.|
+| `test_app.py`                   | Script containing tests for verifying the application functionality.        |
+| `vgg19_fine_tuned_block5_91.keras`| The pre-trained VGG19 model file fine-tuned for pneumonia detection.      |
 
-## Model Links
-- [CNN Model](https://drive.google.com/file/d/1-4L-8HJ79W5k-0l8FchG4HH1SI2dLi2W/view?usp=sharing)
+---
 
-## Setup Instructions
+## **Steps to Set Up and Run the Project**
 
-### Prerequisites
-- Python 3.8 or higher
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/Pneumono_Detect.git
-cd Pneumono_Detect
-```
-
-2. Set up the environment:
-
-#### Windows:
+### **1. Clone the Repository**
+Use the following command to clone the repository to your local machine:
 
 ```bash
-./setup.bat
+git clone https://github.com/Praful-John2409/Pneumono_Detect.git
 ```
 
-#### Linux/Mac:
+### **2. Open the Repository in an IDE**
+1. Open your preferred IDE (e.g., **Visual Studio Code**).
+2. Navigate to the cloned folder and open the project.
 
+### **3. Install Dependencies**
+Install the required dependencies using the `requirements.txt` file. Ensure you are using Python 3.8 or above.
+
+#### On Windows:
+1. Run the setup script to install dependencies:
+   ```bash
+   ./setup.bat
+   ```
+
+#### On Linux/Mac:
+1. Make the setup script executable:
+   ```bash
+   chmod +x setup.sh
+   ```
+2. Run the setup script:
+   ```bash
+   ./setup.sh
+   ```
+
+Alternatively, manually install dependencies using `pip`:
 ```bash
-chmod +x setup.sh
-./setup.sh
+pip install -r requirements.txt
 ```
 
-### Activating the Environment
+---
 
-#### Windows:
+### **4. Dependencies Included**
+The following dependencies are required and installed via `requirements.txt`:
+- `flask==3.1.0`: For handling server-side operations.
+- `tensorflow`: For building and loading the pre-trained VGG19 model.
+- `Pillow==10.2.0`: For image processing.
+- `numpy==1.23.5`: For numerical operations.
+- `keras`: For deep learning workflows.
+- `gunicorn`: For deploying the app in production.
+- `gradio`: For creating the user interface.
+- `pytest`: For writing and executing tests.
 
-```bash
-tf_test_env\Scripts\activate
-```
+---
 
-#### Linux/Mac:
-
-```bash
-source tf_test_env/bin/activate
-```
-
-## Running the Application
-
-1. Ensure your virtual environment is activated
-2. Run the Flask application:
+### **5. Run the Application**
+Start the application using the following command:
 
 ```bash
 python app.py
 ```
-3. Open a web browser and navigate to `http://localhost:5000`
 
-## Usage
+This will start a local server, and the application can be accessed via your web browser at `http://127.0.0.1:7860`.
 
-1. Upload a chest X-ray image through the web interface
-2. Click "Predict" to get the classification result
-3. View the prediction result and confidence score
+---
 
+### **6. Test the Application**
+To verify the functionality of the application, run the test script:
 
+```bash
+python test_app.py
+```
 
-## Model Information
-- Architecture: VGG19 (fine-tuned)
-- Input Size: 512x512x3
-- Classes: NORMAL, PNEUMONIA
-- Confidence Threshold: 0.7
+This will execute test cases to ensure the application is working as expected.
 
-## Dependencies
-- Flask 3.1.0
-- TensorFlow 2.12.0
-- Pillow 10.2.0
-- NumPy 1.23.5
+---
+
+## **How It Works**
+1. The application leverages a pre-trained **VGG19** model fine-tuned for pneumonia detection.
+2. A **Gradio-based interface** allows users to upload chest X-ray images and view predictions.
+3. The system preprocesses uploaded images, uses the TensorFlow model for inference, and displays results with confidence scores.
+
+---
+
+## **Acknowledgments**
+This project was developed as part of coursework, with special thanks to **Prof. Andrew Bond** for guidance and support. The dataset used is from Kaggle's Chest X-Ray Images dataset: [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia).
+
+---
+## **Live Project**
+Click [here](https://huggingface.co/spaces/SoulMind01/PneumoniaDetection) to check out the live project.
