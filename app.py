@@ -1,3 +1,6 @@
+# Work Distribution:
+# Function preprocess_image, predict_image written by Tingfei Gu
+# Function acknowledge written by Ranyi Zhang
 import gradio as gr
 import numpy as np
 from tensorflow.keras.models import load_model
