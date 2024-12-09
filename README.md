@@ -102,10 +102,14 @@ This will execute test cases to ensure the application is working as expected.
 3. The system preprocesses uploaded images, uses the TensorFlow model for inference, and displays results with confidence scores.
 
 ---
+## **Live Project**
 
+Click [here](https://huggingface.co/spaces/SoulMind01/PneumoniaDetection) to check out the live project.
+---
+## **Powerpoint Presentation link**
+
+Click [here](https://docs.google.com/presentation/d/10pRh_B9fRCb__6gbEdFi43rkW2RWirDEH3OKZFdAKNI/edit?usp=sharing) to access the link to the powerpoint presentation with the updated reference to the images used in the presentation.
+---
 ## **Acknowledgments**
 This project was developed as part of coursework, with special thanks to **Prof. Andrew Bond** for guidance and support. The dataset used is from Kaggle's Chest X-Ray Images dataset: [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia).
 
----
-## **Live Project**
-Click [here](https://huggingface.co/spaces/SoulMind01/PneumoniaDetection) to check out the live project.
